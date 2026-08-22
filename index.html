@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -16,7 +14,7 @@
     <!-- خطوط جوجل الاحترافية والوقورة -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">|
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <meta property="og:image" content="https://albazie-law.com/BZ.png">
     
     <!-- أيقونات الخطوط (FontAwesome) للخدمات والإحصائيات وتواصل الجوال -->
@@ -57,7 +55,7 @@
             align-items: center;
             font-size: 0.85rem;
             border-bottom: 1px solid rgba(140, 98, 57, 0.3);
-            direction: ltr; /* لتثبيت اتجاه الأرقام والإنجليزية يسار ليمين */
+            direction: ltr;
         }
 
         .top-bar .contact-group {
@@ -67,7 +65,7 @@
         }
 
         .top-bar span {
-            direction: rtl; /* إعادة النص العربي ليمين ليسار داخلياً إن احتجت */
+            direction: rtl;
             unicode-bidi: embed;
             display: inline-flex;
             align-items: center;
@@ -103,7 +101,6 @@
             gap: 15px;
         }
 
-        /* تنسيق اسم الهيدر الاحترافي بدلاً من الصورة */
         .brand-logo {
             font-family: var(--font-amiri);
             font-size: 1.9rem;
@@ -118,7 +115,7 @@
         }
         
         .brand-logo img {
-            height: 40px; /* تحكم في حجم الصورة هنا */
+            height: 40px;
             width: auto;
             border-radius: 4px;
         }
@@ -163,8 +160,19 @@
         .hero p {
             font-size: 1.35rem;
             max-width: 850px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto 20px auto;
             color: #eedcd0;
+        }
+
+        .license-badge {
+            display: inline-block;
+            background-color: rgba(140, 98, 57, 0.25);
+            border: 1px solid var(--copper-color);
+            color: #eedcd0;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
         }
 
         .btn-copper {
@@ -185,30 +193,6 @@
             background-color: #a87e53;
             transform: translateY(-3px);
             box-shadow: 0 5px 20px rgba(140, 98, 57, 0.4);
-        }
-
-        /* قسم الإحصائيات */
-        .counters {
-            background-color: var(--primary-dark);
-            color: #ffffff;
-            padding: 50px 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            text-align: center;
-            border-top: 4px solid var(--copper-color);
-        }
-
-        .counter-item i {
-            font-size: 2.5rem;
-            color: var(--copper-color);
-            margin-bottom: 15px;
-        }
-
-        .counter-item h3 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 5px;
         }
 
         /* التنسيق العام للأقسام */
@@ -241,6 +225,11 @@
             width: 100px;
             height: 3px;
             background-color: var(--copper-color);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            margin-top: 15px;
         }
 
         /* المنهجية القانونية */
@@ -279,12 +268,98 @@
             font-size: 1.8rem;
         }
 
-        /* فريق العمل */
-        .team-section { background-color: var(--bg-cream); }
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; justify-content: center; }
-        .team-card { background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .team-img-placeholder { height: 280px; background-color: var(--primary-dark); display: flex; align-items: center; justify-content: center; color: var(--copper-color); font-size: 5rem; }
-        .team-info { padding: 30px; text-align: center; }
+        /* فريق العمل المحدث (بطاقتين جنباً إلى جنب) */
+        .team-section { 
+            background-color: var(--bg-cream); 
+            padding: 90px 20px;
+        }
+        
+        .team-grid { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            flex-wrap: wrap; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+
+        .team-card { 
+            background: #ffffff; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06); 
+            overflow: hidden; 
+            width: 530px; 
+            transition: transform 0.3s ease; 
+            border: 1px solid #eee; 
+            text-align: right; 
+        }
+
+        .team-card:hover { 
+            transform: translateY(-5px); 
+        }
+
+        .team-img-box { 
+            width: 100%; 
+            height: 320px; 
+            background-color: var(--primary-dark); 
+            overflow: hidden; 
+        }
+
+        .team-img-box img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        }
+
+        .team-info { 
+            padding: 30px; 
+        }
+
+        .team-info h3 { 
+            font-size: 1.35rem; 
+            color: var(--primary-dark); 
+            margin-bottom: 5px; 
+        }
+
+        .team-role { 
+            display: block; 
+            font-size: 0.95rem; 
+            color: var(--copper-color); 
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            border-bottom: 1px solid #f0f0f0; 
+            padding-bottom: 10px; 
+        }
+
+        .bio-block { 
+            margin-bottom: 18px; 
+        }
+
+        .bio-title { 
+            font-size: 0.95rem; 
+            color: var(--primary-dark); 
+            font-weight: bold; 
+            margin-bottom: 6px; 
+        }
+
+        .team-desc { 
+            font-size: 0.9rem; 
+            color: #555; 
+            line-height: 1.6; 
+            margin: 0; 
+        }
+
+        .bio-list { 
+            margin: 0; 
+            padding-right: 18px; 
+            font-size: 0.9rem; 
+            color: #555; 
+            line-height: 1.6; 
+        }
+
+        .bio-list li { 
+            margin-bottom: 4px; 
+        }
 
         /* نموذج الاستشارة */
         .consultation-form-wrapper { background-color: var(--primary-dark); color: #ffffff; border-radius: 8px; padding: 50px; border: 1px solid rgba(140, 98, 57, 0.2); max-width: 800px; margin: 0 auto; }
@@ -298,12 +373,15 @@
         /* الفوتر */
         footer { background-color: #1e1109; color: #dfd4cc; padding: 60px 5% 30px 5%; border-top: 3px solid var(--copper-color); }
         .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: var(--copper-color); margin-bottom: 15px; font-size: 1.2rem; }
+        .footer-col p { margin-bottom: 10px; font-size: 0.95rem; }
         .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .form-grid { grid-template-columns: 1fr; }
             .form-full { grid-column: span 1; }
+            .team-card { width: 100%; }
         }
     </style>
 </head>
@@ -335,7 +413,10 @@
     <section class="hero">
         <h1>البازعي محامون ومستشارون</h1>
         <p>نلتزم بتقديم أدق الحلول القانونية والوقائية والتمثيل القضائي لعملائنا بأعلى معايير الأمانة المهنية والامتثال للأنظمة والتشريعات.</p>
-        <a href="#consult" class="btn-copper">احجز استشارتك القانونية</a>
+        <div class="license-badge"><i class="fa-solid fa-certificate"></i> رقم الترخيص: 471637</div>
+        <div>
+            <a href="#consult" class="btn-copper">احجز استشارتك القانونية</a>
+        </div>
     </section>
 
     <section id="methodology" class="section-container">
@@ -362,21 +443,95 @@
         </div>
     </section>
 
+    <!-- قسم فريق العمل المحدث (بطاقتان جنباً إلى جنب مع السير الذاتية والترخيص) -->
     <section id="founders" class="team-section">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>فريق البازعي</h2>
-            </div>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-img-placeholder"><i class="fa-solid fa-user-tie"></i></div>
-                    <div class="team-info">
-                        <h3>البازعي</h3>
-                        <p class="team-title">محامون ومستشارون</p>
-                        <p>نخبة متميزة من الكفاءات القانونية التي تسعى لتقديم خدمات الدفاع، الاستشارات، وتأسيس الشركات وصياغة العقود باحترافية.</p>
+        <div class="section-header">
+            <h2>فريق العمل</h2>
+            <p>نخبة متميزة من الكفاءات القانونية والمصرفية لخدمة أعمالكم</p>
+        </div>
+        
+        <div class="team-grid">
+            
+            <!-- الشخص الأول: د. عبد الملك البازعي -->
+            <div class="team-card">
+                <div class="team-img-box">
+                    <img src="dr-abdulmalik.jpg" alt="د. عبد الملك البازعي">
+                </div>
+                <div class="team-info">
+                    <h3>د. عبد الملك بن عبد الله البازعي</h3>
+                    <span class="team-role">مستشار شرعي وقانوني وباحث أنظمة</span>
+                    
+                    <div class="bio-block">
+                        <h4 class="bio-title">الملخص التعريفي:</h4>
+                        <p class="team-desc">مستشار شرعي وقانوني وباحث متخصص يدمج بين التأصيل الشرعي والتحليل النظامي والتطبيق المؤسسي، مع تركيز احترافي على الحوكمة وإدارة المخاطر والامتثال في القطاعات المالية، التأمينية.</p>
+                    </div>
+
+                    <div class="bio-block">
+                        <h4 class="bio-title">المؤهلات العلمية:</h4>
+                        <ul class="bio-list">
+                            <li>حاصل على درجة الدكتوراه في أصول الفقه من جامعة القصيم عام 2022م.</li>
+                            <li>درجة الماجستير في أصول الفقه من جامعة الإمام محمد بن سعود الإسلامية 2017م.</li>
+                            <li>الدبلوم العالي في المحاماة 2017م.</li>
+                            <li>درجة البكالوريوس في الشريعة من جامعة القصيم 2009م.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bio-block">
+                        <h4 class="bio-title">أبرز الخبرات:</h4>
+                        <ul class="bio-list">
+                            <li>مستشار شرعي وقانوني في شركة "دار المراجعة الشرعية" (مرخصة من البنك المركزي البحريني).</li>
+                            <li>مستشار اللجنة الشرعية في شركة "اتحاد الخليج للتأمين التعاوني".</li>
+                            <li>مستشار اللجنة الشرعية في شركة "المتكاملة للتأمين التعاوني".</li>
+                            <li>مستشار متعاون مع "شركة تطوير التعليم القابضة" ومحاضر سابق في قسم الحقوق بكليات بريدة ومحاضر ومدرب قانوني في الأمن العام.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bio-block">
+                        <h4 class="bio-title">الإنتاج العلمي:</h4>
+                        <p class="team-desc">بحوث علمية محكمة في الشريعة والقانون والمنازعات المصرفية والتمويلية.</p>
                     </div>
                 </div>
             </div>
+
+            <!-- الشخص الثاني: أ. عبدالله البازعي -->
+            <div class="team-card">
+                <div class="team-img-box">
+                    <img src="abdullah-bazai.jpg" alt="عبد الله البازعي">
+                </div>
+                <div class="team-info">
+                    <h3>عبد الله بن عبد الرحمن البازعي</h3>
+                    <span class="team-role">خبير المصرفية والقطاع المالي والقانون التجاري</span>
+                    
+                    <div class="bio-block">
+                        <h4 class="bio-title">الملخص التعريفي:</h4>
+                        <p class="team-desc">قيادي مصرفي وخبير في القطاع المالي والمصرفي والقانون التجاري، بخبرة تمتد لعقود في إدارة كبار العملاء، الحوكمة المصرفية، وتقديم الاستشارات والبرامج التدريبية التخصصية.</p>
+                    </div>
+
+                    <div class="bio-block">
+                        <h4 class="bio-title">المؤهلات العلمية:</h4>
+                        <ul class="bio-list">
+                            <li>ماجستير القانون التجاري (بتقدير ممتاز مع مرتبة الشرف) – بحث في حوكمة البنوك في السعودية.</li>
+                            <li>بكالوريوس القانون من كليات بريدة (امتياز مع مرتبة الشرف الثانية).</li>
+                            <li>دبلوم تقنية البرمجة واجتياز اختبارات مؤسسة النقد (ساما) ومنتجات الأمانة والاستثمار.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bio-block">
+                        <h4 class="bio-title">أبرز الخبرات:</h4>
+                        <ul class="bio-list">
+                            <li>مسؤول الوسام البلاتيني في البنك الأهلي التجاري.</li>
+                            <li>مسؤول قسم كبار العملاء (الامتياز والبريمير) في البنك السعودي البريطاني (ساب).</li>
+                            <li>محاضر متعاون في جامعة القصيم ومدرب معتمد لمنتجات المصرفية الإسلامية.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bio-block">
+                        <h4 class="bio-title">التميز والمهارات:</h4>
+                        <p class="team-desc">إتقان تام للغة الإنجليزية وبرمجيات الحاسب الآلي، وحائز على جوائز متقدمة في التميز التسويقي المصرفي.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -416,6 +571,7 @@
             <div class="footer-col">
                 <h4>البازعي محامون ومستشارون</h4>
                 <p>خبرات قانونية وشرعية لخدمات وقائية، تمثيل قضائي، وصياغة عقود لحماية أعمالكم بأعلى درجات السرية.</p>
+                <p style="margin-top: 15px; color: var(--copper-color); font-weight: bold;"><i class="fa-solid fa-certificate"></i> رقم الترخيص: 471637</p>
             </div>
             <div class="footer-col">
                 <h4>معلومات التواصل</h4>
