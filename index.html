@@ -73,18 +73,17 @@
             color: #d1ab7a;
         }
 
-        /* تنسيق البيانات القانونية فوق بعضها في الشريط العلوي */
+        /* تنسيق البيانات القانونية فوق بعضها في الشريط العلوي مع ضبط اتجاه الأرقام */
         .top-bar-legal {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
             gap: 2px;
-            text-align: left;
-            direction: ltr;
+            text-align: right;
         }
 
         .top-bar-legal span {
-            direction: ltr;
+            direction: rtl;
             unicode-bidi: embed;
         }
 
@@ -385,18 +384,18 @@
             font-family: var(--font-amiri);
         }
 
-        /* تنسيق البيانات القانونية فوق بعضها البعض في الفوتر وجعلها في اليسار */
+        /* تنسيق البيانات القانونية فوق بعضها في الفوتر */
         .footer-legal-col {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 4px;
             font-size: 0.95rem;
-            direction: ltr;
+            text-align: left;
         }
 
         .footer-legal-col span {
-            direction: ltr;
+            direction: rtl;
             unicode-bidi: embed;
         }
 
@@ -423,8 +422,8 @@
             <span><i class="fa-solid fa-envelope"></i> albazie.law@gmail.com</span>
         </div>
         <div class="top-bar-legal">
-            <span>Commercial Registration: 7000015073</span>
-            <span>License No: 471637</span>
+            <span>سجل منشأة قانونية رقم: 7000015073</span>
+            <span>ترخيص رقم: 471637</span>
         </div>
     </div>
 
@@ -613,8 +612,8 @@
                 <p><i class="fa-solid fa-phone"></i> 0504888115 | 0546779090</p>
             </div>
             <div class="footer-col footer-legal-col">
-                <span>Commercial Registration: 7000015073</span>
-                <span>License No: 471637</span>
+                <span>سجل منشأة قانونية رقم: 7000015073</span>
+                <span>ترخيص رقم: 471637</span>
             </div>
         </div>
         <div class="copyright">جميع الحقوق محفوظة © للبازعي محامون ومستشارون 2026.</div>
