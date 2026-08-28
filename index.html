@@ -49,6 +49,7 @@
             align-items: center;
             font-size: 0.85rem;
             border-bottom: 1px solid rgba(140, 98, 57, 0.3);
+            direction: ltr;
         }
 
         .top-bar .contact-group {
@@ -58,6 +59,8 @@
         }
 
         .top-bar span {
+            direction: rtl;
+            unicode-bidi: embed;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -73,18 +76,12 @@
             color: #d1ab7a;
         }
 
-        /* تنسيق البيانات القانونية فوق بعضها في الشريط العلوي مع ضبط اتجاه الأرقام */
-        .top-bar-legal {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 2px;
-            text-align: right;
-        }
-
-        .top-bar-legal span {
-            direction: rtl;
-            unicode-bidi: embed;
+        .top-bar .license-tag {
+            color: #eedcd0;
+            background: rgba(140, 98, 57, 0.2);
+            padding: 2px 10px;
+            border-radius: 4px;
+            border: 1px solid rgba(140, 98, 57, 0.4);
         }
 
         header {
@@ -288,7 +285,8 @@
         }
 
         .team-img-box { 
-            width: 100%;
+            width: 100vw;
+            max-width: 100%;
             height: 420px;
             background-color: var(--primary-dark); 
             overflow: hidden; 
@@ -312,6 +310,26 @@
 
         .team-img-box:hover img {
             transform: scale(1.03);
+        }
+
+        .team-img-box::after {
+            content: '\f00e';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(44, 26, 14, 0.7);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .team-img-box:hover::after {
+            opacity: 1;
         }
 
         .team-info { 
@@ -377,6 +395,7 @@
         .footer-col h4 { color: var(--copper-color); margin-bottom: 15px; font-size: 1.2rem; }
         .footer-col p { margin-bottom: 10px; font-size: 0.95rem; }
         
+        /* تكبير عبارة ثقة تُبنى وحقوق تُصان */
         .footer-col .slogan {
             font-size: 1.25rem;
             font-weight: 700;
@@ -384,19 +403,13 @@
             font-family: var(--font-amiri);
         }
 
-        /* تنسيق البيانات القانونية فوق بعضها في الفوتر */
+        /* تنسيق البيانات القانونية فوق بعضها البعض في الفوتر */
         .footer-legal-col {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            gap: 4px;
+            gap: 8px;
             font-size: 0.95rem;
             text-align: left;
-        }
-
-        .footer-legal-col span {
-            direction: rtl;
-            unicode-bidi: embed;
         }
 
         .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem; margin-top: 30px; }
@@ -406,10 +419,9 @@
             .form-grid { grid-template-columns: 1fr; }
             .form-full { grid-column: span 1; }
             .team-card { width: 100%; }
-            .top-bar { flex-direction: column; gap: 12px; text-align: center; }
+            .top-bar { flex-direction: column; gap: 8px; text-align: center; }
             .top-bar .contact-group { justify-content: center; flex-wrap: wrap; }
-            .top-bar-legal { align-items: center; text-align: center; }
-            .footer-legal-col { align-items: center; text-align: center; }
+            .footer-legal-col { text-align: center; }
         }
     </style>
 </head>
@@ -417,20 +429,14 @@
 
     <div class="top-bar">
         <div class="contact-group">
-            <span>المملكة العربية السعودية</span 
-            <span>سجل منشأة قانونية رقم: 7000015073</span>
-            <span>ترخيص رقم: 471637</span>
-        </div>
-        <div class="top-bar">
-
-        <div class="contact-group">
-
             <span><i class="fa-solid fa-phone"></i> 0504888115</span>
-
             <span><i class="fa-solid fa-phone"></i> 0546779090</span>
-
             <span><i class="fa-solid fa-envelope"></i> albazie.law@gmail.com</span>
-
+        </div>
+        <div>
+            <span style="margin-right: 15px;">سجل منشأة قانونية رقم:7000015073</span>
+            <span style="color: #ffffff; margin-right: 15px; background: none; border: none; padding: 0;">ترخيص رقم: 471637</span>
+            <span style="margin-right: 15px;">المملكة العربية السعودية</span>
         </div>
     </div>
 
@@ -450,9 +456,6 @@
 
     <section class="hero">
         <h1>البازعي محامون ومستشارون</h1>
-
-        <p class="slogan">ثقةٌ تُبنى .. وحقوقٌ تُصان</p>
-        
         <p>نلتزم بتقديم أدق الحلول القانونية والوقائية والتمثيل القضائي لعملائنا بأعلى معايير الأمانة المهنية والامتثال للأنظمة والتشريعات.</p>
         <div>
             <a href="#consult" class="btn-copper">احجز استشارتك القانونية</a>
@@ -513,7 +516,8 @@
                         <ul class="bio-list">
                             <li>حاصل على الماجستير في القانون التجاري بتقدير ممتاز مع مرتبة الشرف من جامعة دار العلوم رسالة بعنوان ( حوكمة البنوك السعودية)</li>
                             <li> بكالوريوس في القانون بتقدير ممتاز مع مرتبة الشرف من كليات بريدة.</li>
-                            <li> حاصل على BDI للحوكمه البرطانية للعمل كأمين مجلس إدارة</li>
+                             <li> حاصل على BDI للحوكمه البرطانية للعمل كأمين مجلس إدارة</li>
+                            
                         </ul>
                     </div>
 
@@ -521,6 +525,7 @@
                         <h4 class="bio-title">أبرز الخبرات:</h4>
                         <ul class="bio-list">
                             <li>عمل في المجال القانوني والحوكمة والالتزام منذ عام 2020م وحتى تاريخه، كما عمل محاضرًا متعاونًا في عدد من الجامعات الحكومية والأهلية.</li>
+                            
                         </ul>
                     </div>
 
@@ -564,7 +569,7 @@
                             <li>مستشار اللجنة الشرعية في شركة "اتحاد الخليج للتأمين التعاوني".</li>
                             <li>مستشار اللجنة الشرعية في شركة " المتكاملة للتأمين التعاوني".</li>
                             <li>مستشار متعاون مع "شركة تطوير التعليم القابضة"</li>
-                            <li>محاضر سابق في قسم الحقوق بكليات بريدة.</li>
+                             <li>محاضر سابق في قسم الحقوق بكليات بريدة.</li>
                             <li>محاضر ومدرب قانوني في الأمن العام.</li>
                         </ul>
                     </div>
@@ -621,7 +626,7 @@
                 <p><i class="fa-solid fa-envelope"></i> albazie.law@gmail.com</p>
                 <p><i class="fa-solid fa-phone"></i> 0504888115 | 0546779090</p>
             </div>
-            <div class="footer-col footer-legal-col">
+           <div class="footer-col footer-legal-col">
                 <span>سجل منشأة قانونية رقم: 7000015073</span>
                 <span>ترخيص رقم: 471637</span>
             </div>
