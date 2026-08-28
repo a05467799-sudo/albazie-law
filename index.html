@@ -49,7 +49,6 @@
             align-items: center;
             font-size: 0.85rem;
             border-bottom: 1px solid rgba(140, 98, 57, 0.3);
-            direction: ltr;
         }
 
         .top-bar .contact-group {
@@ -59,8 +58,6 @@
         }
 
         .top-bar span {
-            direction: rtl;
-            unicode-bidi: embed;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -76,12 +73,19 @@
             color: #d1ab7a;
         }
 
-        .top-bar .license-tag {
-            color: #eedcd0;
-            background: rgba(140, 98, 57, 0.2);
-            padding: 2px 10px;
-            border-radius: 4px;
-            border: 1px solid rgba(140, 98, 57, 0.4);
+        /* تنسيق البيانات القانونية فوق بعضها في الشريط العلوي */
+        .top-bar-legal {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2px;
+            text-align: left;
+            direction: ltr;
+        }
+
+        .top-bar-legal span {
+            direction: ltr;
+            unicode-bidi: embed;
         }
 
         header {
@@ -285,8 +289,7 @@
         }
 
         .team-img-box { 
-            width: 100vw;
-            max-width: 100%;
+            width: 100%;
             height: 420px;
             background-color: var(--primary-dark); 
             overflow: hidden; 
@@ -300,38 +303,16 @@
             transition: transform 0.4s ease;
         }
 
-        /* تخصيص صورة عبد الملك (كما هي بدون تغيير) */
         .team-img-box.dr-abdulmalik-img img {
             object-position: top center;
         }
 
-        /* تخصيص صورة عبد الله لضبط عرض الوجه والشماغ كاملاً */
         .team-img-box.abdullah-img img {
             object-position: 50% 20%;
         }
 
         .team-img-box:hover img {
             transform: scale(1.03);
-        }
-
-        .team-img-box::after {
-            content: '\f00e';
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            background: rgba(44, 26, 14, 0.7);
-            color: #fff;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .team-img-box:hover::after {
-            opacity: 1;
         }
 
         .team-info { 
@@ -393,18 +374,43 @@
         .form-input-group input, .form-input-group select, .form-input-group textarea { padding: 12px; border: 1px solid rgba(255, 255, 255, 0.15); background-color: rgba(255, 255, 255, 0.05); color: #ffffff; border-radius: 4px; }
 
         footer { background-color: #1e1109; color: #dfd4cc; padding: 60px 5% 30px 5%; border-top: 3px solid var(--copper-color); }
-        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; align-items: center; }
         .footer-col h4 { color: var(--copper-color); margin-bottom: 15px; font-size: 1.2rem; }
         .footer-col p { margin-bottom: 10px; font-size: 0.95rem; }
-        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem; }
+        
+        .footer-col .slogan {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            font-family: var(--font-amiri);
+        }
+
+        /* تنسيق البيانات القانونية فوق بعضها البعض في الفوتر وجعلها في اليسار */
+        .footer-legal-col {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            font-size: 0.95rem;
+            direction: ltr;
+        }
+
+        .footer-legal-col span {
+            direction: ltr;
+            unicode-bidi: embed;
+        }
+
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem; margin-top: 30px; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .form-grid { grid-template-columns: 1fr; }
             .form-full { grid-column: span 1; }
             .team-card { width: 100%; }
-            .top-bar { flex-direction: column; gap: 8px; text-align: center; }
+            .top-bar { flex-direction: column; gap: 12px; text-align: center; }
             .top-bar .contact-group { justify-content: center; flex-wrap: wrap; }
+            .top-bar-legal { align-items: center; text-align: center; }
+            .footer-legal-col { align-items: center; text-align: center; }
         }
     </style>
 </head>
@@ -416,10 +422,9 @@
             <span><i class="fa-solid fa-phone"></i> 0546779090</span>
             <span><i class="fa-solid fa-envelope"></i> albazie.law@gmail.com</span>
         </div>
-        <div>
-            <span style="margin-right: 15px;">سجل منشأة قانونية رقم:7000015073</span>
-            <span style="color: #ffffff; margin-right: 15px; background: none; border: none; padding: 0;">ترخيص رقم: 471637</span>
-            <span style="margin-right: 15px;">المملكة العربية السعودية</span>
+        <div class="top-bar-legal">
+            <span>Commercial Registration: 7000015073</span>
+            <span>License No: 471637</span>
         </div>
     </div>
 
@@ -478,7 +483,7 @@
         
         <div class="team-grid">
             
-            <!-- الشخص الأول: عبد الله البازعي (تم تعديل موضع الصورة لضبط الوجه والشماغ) -->
+            <!-- الشخص الأول: عبد الله البازعي -->
             <div class="team-card">
                 <a href="1abdullah-bazai.jpg" target="_blank" title="انقر لعرض الصورة بالحجم الكامل">
                     <div class="team-img-box abdullah-img">
@@ -499,8 +504,7 @@
                         <ul class="bio-list">
                             <li>حاصل على الماجستير في القانون التجاري بتقدير ممتاز مع مرتبة الشرف من جامعة دار العلوم رسالة بعنوان ( حوكمة البنوك السعودية)</li>
                             <li> بكالوريوس في القانون بتقدير ممتاز مع مرتبة الشرف من كليات بريدة.</li>
-                             <li> حاصل على BDI للحوكمه البرطانية للعمل كأمين مجلس إدارة</li>
-                            
+                            <li> حاصل على BDI للحوكمه البرطانية للعمل كأمين مجلس إدارة</li>
                         </ul>
                     </div>
 
@@ -508,7 +512,6 @@
                         <h4 class="bio-title">أبرز الخبرات:</h4>
                         <ul class="bio-list">
                             <li>عمل في المجال القانوني والحوكمة والالتزام منذ عام 2020م وحتى تاريخه، كما عمل محاضرًا متعاونًا في عدد من الجامعات الحكومية والأهلية.</li>
-                            
                         </ul>
                     </div>
 
@@ -519,7 +522,7 @@
                 </div>
             </div>
 
-            <!-- الشخص الثاني: د. عبد الملك البازعي (كما هو بدون أي تغيير) -->
+            <!-- الشخص الثاني: د. عبد الملك البازعي -->
             <div class="team-card">
                 <a href="1dr-abdulmalik.jpg" target="_blank" title="انقر لعرض الصورة بالحجم الكامل">
                     <div class="team-img-box dr-abdulmalik-img">
@@ -552,7 +555,7 @@
                             <li>مستشار اللجنة الشرعية في شركة "اتحاد الخليج للتأمين التعاوني".</li>
                             <li>مستشار اللجنة الشرعية في شركة " المتكاملة للتأمين التعاوني".</li>
                             <li>مستشار متعاون مع "شركة تطوير التعليم القابضة"</li>
-                             <li>محاضر سابق في قسم الحقوق بكليات بريدة.</li>
+                            <li>محاضر سابق في قسم الحقوق بكليات بريدة.</li>
                             <li>محاضر ومدرب قانوني في الأمن العام.</li>
                         </ul>
                     </div>
@@ -602,15 +605,17 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>البازعي محامون ومستشارون</h4>
-                <p>ثقةٌ تُبنى .. وحقوقٌ تُصان</p>
+                <p class="slogan">ثقةٌ تُبنى .. وحقوقٌ تُصان</p>
             </div>
             <div class="footer-col">
                 <h4>معلومات التواصل</h4>
                 <p><i class="fa-solid fa-envelope"></i> albazie.law@gmail.com</p>
                 <p><i class="fa-solid fa-phone"></i> 0504888115 | 0546779090</p>
             </div>
-             <span style="margin-right: 15px;">سجل منشأة قانونية رقم:7000015073</span>
-            <span style="color: #ffffff; margin-right: 15px; background: none; border: none; padding: 0;">ترخيص رقم: 471637</span>
+            <div class="footer-col footer-legal-col">
+                <span>Commercial Registration: 7000015073</span>
+                <span>License No: 471637</span>
+            </div>
         </div>
         <div class="copyright">جميع الحقوق محفوظة © للبازعي محامون ومستشارون 2026.</div>
     </footer>
