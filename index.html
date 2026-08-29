@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-M6NG4WQ4');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>البازعي محامون ومستشارون | خدمات قانونية متكاملة</title>
@@ -295,6 +298,7 @@
             background-color: var(--primary-dark); 
             overflow: hidden; 
             position: relative;
+            cursor: pointer;
         }
 
         .team-img-box img { 
@@ -334,6 +338,63 @@
 
         .team-img-box:hover::after {
             opacity: 1;
+        }
+
+        /* نافذة عرض الصورة المكبرة (Lightbox Modal) */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        .modal-content-wrapper {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            text-align: center;
+        }
+
+        .modal-content-wrapper img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 6px;
+            object-fit: contain;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+            background-color: #fff;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: -45px;
+            left: 0;
+            color: #ffffff;
+            font-size: 2.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .modal-close-btn:hover {
+            background: var(--copper-color);
         }
 
         .team-info { 
@@ -437,8 +498,11 @@
 </head>
 <body>
 
+    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6NG4WQ4"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div class="top-bar">
         <div class="contact-group">
             <span><i class="fa-solid fa-phone"></i> 0504888115</span>
@@ -501,6 +565,7 @@
         </div>
     </section>
 
+    <!-- قسم فريق العمل -->
     <section id="founders" class="team-section">
         <div class="section-header">
             <h2>فريق العمل</h2>
@@ -509,12 +574,11 @@
         
         <div class="team-grid">
             
+            <!-- الشخص الأول: عبد الله البازعي -->
             <div class="team-card">
-                <a href="2abdullah-bazai.jpg" target="_blank" title="انقر لعرض الصورة بالحجم الكامل">
-                    <div class="team-img-box abdullah-img">
-                        <img src="2abdullah-bazai.jpg" alt="عبد الله البازعي">
-                    </div>
-                </a>
+                <div class="team-img-box abdullah-img" onclick="openModal('2abdullah-bazai.jpg')">
+                    <img src="2abdullah-bazai.jpg" alt="عبد الله البازعي">
+                </div>
                 <div class="team-info">
                     <h3>عبد الله بن عبد الرحمن البازعي</h3>
                     <span class="team-role">محامٍ ومسشتار قانوني</span>
@@ -550,12 +614,11 @@
                 </div>
             </div>
 
+            <!-- الشخص الثاني: د. عبد الملك البازعي -->
             <div class="team-card">
-                <a href="1dr-abdulmalik.jpg" target="_blank" title="انقر لعرض الصورة بالحجم الكامل">
-                    <div class="team-img-box dr-abdulmalik-img">
-                        <img src="1dr-abdulmalik.jpg" alt="د. عبد الملك البازعي">
-                    </div>
-                </a>
+                <div class="team-img-box dr-abdulmalik-img" onclick="openModal('1dr-abdulmalik.jpg')">
+                    <img src="1dr-abdulmalik.jpg" alt="د. عبد الملك البازعي">
+                </div>
                 <div class="team-info">
                     <h3>د. عبد الملك بن عبد الله البازعي</h3>
                     <span class="team-role">مستشار شرعي وقانوني </span>
@@ -596,6 +659,14 @@
 
         </div>
     </section>
+
+    <!-- نافذة عرض الصورة المكبرة (Lightbox Modal) -->
+    <div id="imageModal" class="image-modal" onclick="closeModalOnBg(event)">
+        <div class="modal-content-wrapper">
+            <span class="modal-close-btn" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="الصورة المكبرة">
+        </div>
+    </div>
 
     <section id="consult" class="section-container">
         <div class="consultation-form-wrapper">
@@ -648,6 +719,28 @@
     </footer>
 
     <script>
+        // دوال التحكم بالصورة المنبثقة (Lightbox)
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // إيقاف التمرير بالخلفية
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // إعادة تفعيل التمرير
+        }
+
+        function closeModalOnBg(event) {
+            // إغلاق النافذة إذا تم النقر على الخلفية السوداء خارج الصورة
+            if (event.target.id === 'imageModal') {
+                closeModal();
+            }
+        }
+
         function sendToWhatsApp(event) {
             event.preventDefault();
             const name = document.getElementById('c-name').value;
