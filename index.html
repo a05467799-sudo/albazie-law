@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-M6NG4WQ4');</script>
-    <!-- End Google Tag Manager -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>البازعي محامون ومستشارون | خدمات قانونية متكاملة</title>
@@ -269,10 +266,9 @@
         }
         
         .team-grid { 
-            display: flex; 
-            justify-content: center; 
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px; 
-            flex-wrap: wrap; 
             max-width: 1200px; 
             margin: 0 auto; 
         }
@@ -282,10 +278,11 @@
             border-radius: 12px; 
             box-shadow: 0 4px 20px rgba(0,0,0,0.06); 
             overflow: hidden; 
-            width: 530px; 
             transition: transform 0.3s ease; 
             border: 1px solid #eee; 
             text-align: right; 
+            display: flex;
+            flex-direction: column;
         }
 
         .team-card:hover { 
@@ -293,8 +290,7 @@
         }
 
         .team-img-box { 
-            width: 100vw;
-            max-width: 100%;
+            width: 100%;
             height: 420px;
             background-color: var(--primary-dark); 
             overflow: hidden; 
@@ -342,6 +338,9 @@
 
         .team-info { 
             padding: 30px; 
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .team-info h3 { 
@@ -420,11 +419,16 @@
 
         .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem; margin-top: 30px; }
 
+        @media (max-width: 992px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .form-grid { grid-template-columns: 1fr; }
             .form-full { grid-column: span 1; }
-            .team-card { width: 100%; }
             .top-bar { flex-direction: column; gap: 8px; text-align: center; }
             .top-bar .contact-group { justify-content: center; flex-wrap: wrap; }
             .footer-legal-col { text-align: center; }
@@ -433,11 +437,8 @@
 </head>
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6NG4WQ4"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <div class="top-bar">
         <div class="contact-group">
             <span><i class="fa-solid fa-phone"></i> 0504888115</span>
@@ -500,7 +501,6 @@
         </div>
     </section>
 
-    <!-- قسم فريق العمل -->
     <section id="founders" class="team-section">
         <div class="section-header">
             <h2>فريق العمل</h2>
@@ -509,7 +509,6 @@
         
         <div class="team-grid">
             
-            <!-- الشخص الأول: عبد الله البازعي -->
             <div class="team-card">
                 <a href="2abdullah-bazai.jpg" target="_blank" title="انقر لعرض الصورة بالحجم الكامل">
                     <div class="team-img-box abdullah-img">
@@ -551,7 +550,6 @@
                 </div>
             </div>
 
-            <!-- الشخص الثاني: د. عبد الملك البازعي -->
             <div class="team-card">
                 <a href="1dr-abdulmalik.jpg" target="_blank" title="انقر لعرض الصورة بالحجم الكامل">
                     <div class="team-img-box dr-abdulmalik-img">
