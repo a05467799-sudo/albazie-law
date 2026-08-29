@@ -458,9 +458,15 @@
         .form-input-group label { margin-bottom: 8px; font-weight: 700; color: var(--copper-color); }
         .form-input-group input, .form-input-group select, .form-input-group textarea { padding: 12px; border: 1px solid rgba(255, 255, 255, 0.15); background-color: rgba(255, 255, 255, 0.05); color: #ffffff; border-radius: 4px; }
         
-        /* تخصيص القائمة المنسدلة وخياراتها لتكون بنفس لون الصندوق وبدون خلفية بيضاء */
+        /* توحيد لون النص المؤقت (Placeholder) والنصوص داخل الحقول وخيارات القائمة المنسدلة */
+        .form-input-group input::placeholder,
+        .form-input-group textarea::placeholder {
+            color: rgba(238, 220, 208, 0.65);
+            opacity: 1;
+        }
+
         .form-input-group select {
-            background-color: var(--primary-light);
+            background-color: rgba(255, 255, 255, 0.05);
             color: #ffffff;
         }
 
