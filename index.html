@@ -228,6 +228,74 @@
             margin-top: 15px;
         }
 
+        /* تنسيقات قسم الخدمات القانونية الجديد */
+        .services-section {
+            background-color: var(--bg-cream);
+            padding: 90px 20px;
+        }
+
+        .services-grid-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-category-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid rgba(140, 98, 57, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-category-title {
+            background-color: var(--primary-dark);
+            color: var(--copper-color);
+            font-family: var(--font-amiri);
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 18px;
+            border-bottom: 3px solid var(--copper-color);
+        }
+
+        .service-items-list {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .service-item-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--bg-cream);
+            padding: 14px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        }
+
+        .service-item-row:hover {
+            transform: translateX(-5px);
+            border-color: var(--copper-color);
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(140, 98, 57, 0.1);
+        }
+
+        .service-item-row span.emoji {
+            font-size: 1.3rem;
+            min-width: 30px;
+            text-align: center;
+        }
+
         .method-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -458,7 +526,6 @@
         .form-input-group label { margin-bottom: 8px; font-weight: 700; color: var(--copper-color); }
         .form-input-group input, .form-input-group select, .form-input-group textarea { padding: 12px; border: 1px solid rgba(255, 255, 255, 0.15); background-color: rgba(255, 255, 255, 0.05); color: #ffffff; border-radius: 4px; }
         
-        /* توحيد لون النص المؤقت (Placeholder) والنصوص داخل الحقول وخيارات القائمة المنسدلة */
         .form-input-group input::placeholder,
         .form-input-group textarea::placeholder {
             color: rgba(238, 220, 208, 0.65);
@@ -542,6 +609,7 @@
             </a>
         </div>
         <nav>
+            <a href="#services">الخدمات القانونية</a>
             <a href="#methodology">منهجيتنا</a>
             <a href="#founders">فريق العمل</a>
             <a href="#consult">طلب استشارة</a>
@@ -556,6 +624,43 @@
         <p>نلتزم بتقديم أدق الحلول القانونية والوقائية والتمثيل القضائي لعملائنا بأعلى معايير الأمانة المهنية والامتثال للأنظمة والتشريعات.</p>
         <div>
             <a href="#consult" class="btn-copper">احجز استشارتك القانونية</a>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات القانونية الجديد -->
+    <section id="services" class="services-section">
+        <div class="section-header">
+            <h2>الخدمات القانونية</h2>
+            <p>نقدم حزمة متكاملة من الخدمات القانونية والشرعية المتخصصة للأفراد والشركات</p>
+        </div>
+        <div class="services-grid-wrapper">
+            
+            <!-- القضايا والتقاضي -->
+            <div class="service-category-card">
+                <div class="service-category-title">القضايا والتقاضي</div>
+                <div class="service-items-list">
+                    <div class="service-item-row"><span class="emoji">⚖️</span> الترافع أمام جميع المحاكم</div>
+                    <div class="service-item-row"><span class="emoji">🔨</span> التحكيم</div>
+                    <div class="service-item-row"><span class="emoji">🤝</span> القضايا التجارية والمنازعات التجارية</div>
+                    <div class="service-item-row"><span class="emoji">📊</span> المنازعات المصرفية والتمويلية والتأمينية</div>
+                    <div class="service-item-row"><span class="emoji">📋</span> الأنظمة واللوائح والجهات الحكومية</div>
+                    <div class="service-item-row"><span class="emoji">👥</span> المنازعات العمالية</div>
+                </div>
+            </div>
+
+            <!-- الشركات والاستثمار -->
+            <div class="service-category-card">
+                <div class="service-category-title">الشركات والاستثمار</div>
+                <div class="service-items-list">
+                    <div class="service-item-row"><span class="emoji">📝</span> صياغة ومراجعة العقود والاتفاقيات</div>
+                    <div class="service-item-row"><span class="emoji">✅</span> حوكَمة الشركات والامتثال</div>
+                    <div class="service-item-row"><span class="emoji">💰</span> المنازعات التجارية والمالية</div>
+                    <div class="service-item-row"><span class="emoji">⚖️</span> تحصيل الديون والتنفيذ</div>
+                    <div class="service-item-row"><span class="emoji">👥</span> الأحوال الشخصية والميراث</div>
+                    <div class="service-item-row"><span class="emoji">📖</span> الاستشارات القانونية</div>
+                </div>
+            </div>
+
         </div>
     </section>
 
