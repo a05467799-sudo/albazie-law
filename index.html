@@ -94,7 +94,7 @@
 
         header {
             background-color: var(--primary-dark);
-            padding: 20px 5%;
+            padding: 15px 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -112,7 +112,7 @@
 
         .brand-logo {
             font-family: var(--font-amiri);
-            font-size: 1.9rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: #ffffff;
             text-decoration: none;
@@ -124,7 +124,7 @@
         }
         
         .brand-logo img {
-            height: 40px;
+            height: 35px;
             width: auto;
             border-radius: 4px;
         }
@@ -133,17 +133,18 @@
             color: var(--copper-color);
         }
 
-        .brand-logo:hover {
-            color: #d1ab7a;
+        nav {
+            display: flex;
+            align-items: center;
         }
 
         nav a {
             color: #ffffff;
             text-decoration: none;
-            margin-right: 25px;
+            margin-right: 20px;
             font-weight: 600;
             transition: color 0.3s;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         nav a:hover, nav a.active {
@@ -152,23 +153,31 @@
 
         .hero {
             background: linear-gradient(rgba(44, 26, 14, 0.85), rgba(44, 26, 14, 0.85)), url('https://cdn.discordapp.com/attachments/1448363503332360213/1526666710445195336/WhatsApp_Image_2026-07-14_at_9.48.27_PM.jpeg?ex=6a57daab&is=6a56892b&hm=4dbc44ecadba0e442b2419e760ce67c9ef9fd3fa3069e0dd8d67c23f1afb73e0&') no-repeat center center/cover;
-            padding: 160px 20px;
+            padding: 140px 20px;
             text-align: center;
             color: #ffffff;
         }
 
         .hero h1 {
             font-family: var(--font-amiri);
-            font-size: 4rem;
+            font-size: 3.2rem;
             color: var(--copper-color);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-weight: 700;
         }
 
+        .hero p.slogan {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            font-family: var(--font-amiri);
+            margin-bottom: 15px;
+        }
+
         .hero p {
-            font-size: 1.35rem;
+            font-size: 1.15rem;
             max-width: 850px;
-            margin: 0 auto 35px auto;
+            margin: 0 auto 30px auto;
             color: #eedcd0;
         }
 
@@ -195,17 +204,17 @@
         .section-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 90px 20px;
+            padding: 80px 20px;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .section-header h2 {
             font-family: var(--font-amiri);
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--primary-dark);
             position: relative;
             display: inline-block;
@@ -228,17 +237,16 @@
             margin-top: 15px;
         }
 
-        /* تنسيقات قسم الخدمات القانونية الجديد */
         .services-section {
             background-color: var(--bg-cream);
-            padding: 90px 20px;
+            padding: 80px 20px;
         }
 
         .services-grid-wrapper {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
@@ -256,9 +264,9 @@
             background-color: var(--primary-dark);
             color: var(--copper-color);
             font-family: var(--font-amiri);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             text-align: center;
-            padding: 18px;
+            padding: 16px;
             border-bottom: 3px solid var(--copper-color);
         }
 
@@ -266,7 +274,7 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .service-item-row {
@@ -274,11 +282,11 @@
             align-items: center;
             gap: 12px;
             background-color: var(--bg-cream);
-            padding: 14px 18px;
+            padding: 12px 15px;
             border-radius: 6px;
             font-weight: 600;
             color: var(--text-dark);
-            font-size: 1.05rem;
+            font-size: 1rem;
             border: 1px solid rgba(0,0,0,0.04);
             transition: all 0.3s ease;
         }
@@ -287,24 +295,23 @@
             transform: translateX(-5px);
             border-color: var(--copper-color);
             background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(140, 98, 57, 0.1);
         }
 
         .service-item-row span.emoji {
-            font-size: 1.3rem;
-            min-width: 30px;
+            font-size: 1.2rem;
+            min-width: 25px;
             text-align: center;
         }
 
         .method-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
         .method-card {
             background-color: var(--bg-cream);
-            padding: 40px 30px;
+            padding: 35px 25px;
             border-radius: 6px;
             border-bottom: 4px solid var(--primary-dark);
             transition: all 0.3s ease;
@@ -319,21 +326,21 @@
         }
 
         .method-icon {
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             background-color: rgba(140, 98, 57, 0.1);
             color: var(--copper-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px auto;
-            font-size: 1.8rem;
+            margin: 0 auto 20px auto;
+            font-size: 1.6rem;
         }
 
         .team-section { 
             background-color: var(--bg-cream); 
-            padding: 90px 20px;
+            padding: 80px 20px;
         }
         
         .team-grid { 
@@ -362,7 +369,7 @@
 
         .team-img-box { 
             width: 100%;
-            height: 420px;
+            height: 400px;
             background-color: var(--primary-dark); 
             overflow: hidden; 
             position: relative;
@@ -408,7 +415,6 @@
             opacity: 1;
         }
 
-        /* نافذة عرض الصورة المكبرة (Lightbox Modal) */
         .image-modal {
             display: none;
             position: fixed;
@@ -466,90 +472,137 @@
         }
 
         .team-info { 
-            padding: 30px; 
+            padding: 25px; 
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .team-info h3 { 
-            font-size: 1.35rem; 
+            font-size: 1.25rem; 
             color: var(--primary-dark); 
             margin-bottom: 5px; 
         }
 
         .team-role { 
             display: block; 
-            font-size: 0.95rem; 
+            font-size: 0.9rem; 
             color: var(--copper-color); 
             font-weight: bold; 
-            margin-bottom: 20px; 
+            margin-bottom: 15px; 
             border-bottom: 1px solid #f0f0f0; 
-            padding-bottom: 10px; 
+            padding-bottom: 8px; 
         }
 
         .bio-block { 
-            margin-bottom: 18px; 
+            margin-bottom: 15px; 
         }
 
         .bio-title { 
-            font-size: 0.95rem; 
+            font-size: 0.9rem; 
             color: var(--primary-dark); 
             font-weight: bold; 
-            margin-bottom: 6px; 
+            margin-bottom: 5px; 
         }
 
-        .team-desc { 
-            font-size: 0.9rem; 
+        .team-desc, .bio-list { 
+            font-size: 0.88rem; 
             color: #555; 
             line-height: 1.6; 
-            margin: 0; 
         }
 
         .bio-list { 
             margin: 0; 
-            padding-right: 18px; 
-            font-size: 0.9rem; 
-            color: #555; 
-            line-height: 1.6; 
+            padding-right: 15px; 
         }
 
-        .bio-list li { 
-            margin-bottom: 4px; 
+        .consultation-form-wrapper { 
+            background-color: var(--primary-dark); 
+            color: #ffffff; 
+            border-radius: 8px; 
+            padding: 40px 30px; 
+            border: 1px solid rgba(140, 98, 57, 0.2); 
+            max-width: 800px; 
+            margin: 0 auto; 
         }
 
-        .consultation-form-wrapper { background-color: var(--primary-dark); color: #ffffff; border-radius: 8px; padding: 50px; border: 1px solid rgba(140, 98, 57, 0.2); max-width: 800px; margin: 0 auto; }
-        .consultation-form-wrapper h3 { font-family: var(--font-amiri); color: var(--copper-color); font-size: 2.3rem; margin-bottom: 35px; text-align: center; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-full { grid-column: span 2; }
-        .form-input-group { display: flex; flex-direction: column; }
-        .form-input-group label { margin-bottom: 8px; font-weight: 700; color: var(--copper-color); }
-        .form-input-group input, .form-input-group select, .form-input-group textarea { padding: 12px; border: 1px solid rgba(255, 255, 255, 0.15); background-color: rgba(255, 255, 255, 0.05); color: #ffffff; border-radius: 4px; }
+        .consultation-form-wrapper h3 { 
+            font-family: var(--font-amiri); 
+            color: var(--copper-color); 
+            font-size: 2rem; 
+            margin-bottom: 30px; 
+            text-align: center; 
+        }
+
+        .form-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
+        }
+
+        .form-full { 
+            grid-column: span 2; 
+        }
+
+        .form-input-group { 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        .form-input-group label { 
+            margin-bottom: 8px; 
+            font-weight: 700; 
+            color: var(--copper-color); 
+        }
+
+        .form-input-group input, .form-input-group select, .form-input-group textarea { 
+            padding: 12px; 
+            border: 1px solid rgba(255, 255, 255, 0.15); 
+            background-color: rgba(255, 255, 255, 0.05); 
+            color: #ffffff; 
+            border-radius: 4px; 
+            font-family: var(--font-cairo);
+        }
         
         .form-input-group input::placeholder,
         .form-input-group textarea::placeholder {
             color: rgba(238, 220, 208, 0.65);
-            opacity: 1;
-        }
-
-        .form-input-group select {
-            background-color: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
         }
 
         .form-input-group select option {
             background-color: var(--primary-dark);
             color: #ffffff;
-            padding: 10px;
         }
 
-        footer { background-color: #1e1109; color: #dfd4cc; padding: 60px 5% 30px 5%; border-top: 3px solid var(--copper-color); }
-        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; align-items: center; }
-        .footer-col h4 { color: var(--copper-color); margin-bottom: 15px; font-size: 1.2rem; }
-        .footer-col p { margin-bottom: 10px; font-size: 0.95rem; }
+        footer { 
+            background-color: #1e1109; 
+            color: #dfd4cc; 
+            padding: 50px 5% 25px 5%; 
+            border-top: 3px solid var(--copper-color); 
+        }
+
+        .footer-grid { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 30px; 
+            align-items: center; 
+        }
+
+        .footer-col h4 { 
+            color: var(--copper-color); 
+            margin-bottom: 12px; 
+            font-size: 1.1rem; 
+        }
+
+        .footer-col p { 
+            margin-bottom: 8px; 
+            font-size: 0.9rem; 
+        }
         
         .footer-col .slogan {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #ffffff;
             font-family: var(--font-amiri);
@@ -558,26 +611,92 @@
         .footer-legal-col {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            font-size: 0.95rem;
-            text-align: left;
+            gap: 6px;
+            font-size: 0.9rem;
         }
 
-        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem; margin-top: 30px; }
+        .copyright { 
+            text-align: center; 
+            padding-top: 25px; 
+            border-top: 1px solid rgba(255, 255, 255, 0.05); 
+            font-size: 0.8rem; 
+            margin-top: 25px; 
+        }
 
-        @media (max-width: 992px) {
+        /* تعديلات متجاوبة لشاشات الهواتف المحمولة لحل مشكلة التداخل في الأعلى */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+                font-size: 0.75rem;
+                padding: 10px;
+            }
+            .top-bar .contact-group {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .top-bar > div:last-child {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                align-items: center;
+            }
+            .top-bar span {
+                margin: 0 !important;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px 15px;
+                text-align: center;
+            }
+
+            .logo-container {
+                justify-content: center;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 8px 12px;
+            }
+
+            nav a {
+                margin: 0;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 100px 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
             .team-grid {
                 grid-template-columns: 1fr;
             }
-        }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .form-grid { grid-template-columns: 1fr; }
-            .form-full { grid-column: span 1; }
-            .top-bar { flex-direction: column; gap: 8px; text-align: center; }
-            .top-bar .contact-group { justify-content: center; flex-wrap: wrap; }
-            .footer-legal-col { text-align: center; }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-full {
+                grid-column: span 1;
+            }
+
+            .consultation-form-wrapper {
+                padding: 25px 15px;
+            }
         }
     </style>
 </head>
@@ -595,9 +714,9 @@
             <span><i class="fa-solid fa-envelope"></i> albazie.law@gmail.com</span>
         </div>
         <div>
-            <span style="margin-right: 15px;">سجل منشأة قانونية رقم:7000015073</span>
-            <span style="color: #ffffff; margin-right: 15px; background: none; border: none; padding: 0;">ترخيص رقم: 471637</span>
-            <span style="margin-right: 15px;">المملكة العربية السعودية</span>
+            <span>سجل منشأة قانونية رقم: 7000015073</span>
+            <span>ترخيص رقم: 471637</span>
+            <span>المملكة العربية السعودية</span>
         </div>
     </div>
 
@@ -618,24 +737,19 @@
 
     <section class="hero">
         <h1>البازعي محامون ومستشارون</h1>
-
         <p class="slogan">ثقةٌ تُبنى .. وحقوقٌ تُصان</p>
-        
         <p>نلتزم بتقديم أدق الحلول القانونية والوقائية والتمثيل القضائي لعملائنا بأعلى معايير الأمانة المهنية والامتثال للأنظمة والتشريعات.</p>
         <div>
             <a href="#consult" class="btn-copper">احجز استشارتك القانونية</a>
         </div>
     </section>
 
-    <!-- قسم الخدمات القانونية الجديد -->
     <section id="services" class="services-section">
         <div class="section-header">
             <h2>الخدمات القانونية</h2>
             <p>نقدم حزمة متكاملة من الخدمات القانونية والشرعية المتخصصة للأفراد والشركات</p>
         </div>
         <div class="services-grid-wrapper">
-            
-            <!-- القضايا والتقاضي -->
             <div class="service-category-card">
                 <div class="service-category-title">القضايا والتقاضي</div>
                 <div class="service-items-list">
@@ -648,7 +762,6 @@
                 </div>
             </div>
 
-            <!-- الشركات والاستثمار -->
             <div class="service-category-card">
                 <div class="service-category-title">الشركات والاستثمار</div>
                 <div class="service-items-list">
@@ -660,7 +773,6 @@
                     <div class="service-item-row"><span class="emoji">📖</span> الاستشارات القانونية</div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -688,16 +800,12 @@
         </div>
     </section>
 
-    <!-- قسم فريق العمل -->
     <section id="founders" class="team-section">
         <div class="section-header">
             <h2>فريق العمل</h2>
             <p>نخبة متميزة من الكفاءات القانونية والشرعية لخدمة أعمالكم</p>
         </div>
-        
         <div class="team-grid">
-            
-            <!-- الشخص الأول: عبد الله البازعي -->
             <div class="team-card">
                 <div class="team-img-box abdullah-img" onclick="openModal('2abdullah-bazai.jpg')">
                     <img src="2abdullah-bazai.jpg" alt="عبد الله البازعي">
@@ -705,31 +813,25 @@
                 <div class="team-info">
                     <h3>عبد الله بن عبد الرحمن البازعي</h3>
                     <span class="team-role">محامٍ ومسشتار قانوني</span>
-                    
                     <div class="bio-block">
                         <h4 class="bio-title">الملخص التعريفي:</h4>
                         <p class="team-desc">محامٍ ومستشار قانوني خبرة مهنية واسعة في المحاماة والاستشارات القانونية والحوكمة والامتثال والقانون التجاري والمصرفي، إلى جانب خبرة مصرفية امتدت لأكثر من عقدين في عدد من البنوك السعودية.</p>
                     </div>
-
                     <div class="bio-block">
                         <h4 class="bio-title">المؤهلات العلمية:</h4>
                         <ul class="bio-list">
                             <li>حاصل على الماجستير في القانون التجاري بتقدير ممتاز مع مرتبة الشرف من جامعة دار العلوم رسالة بعنوان ( حوكمة البنوك السعودية)</li>
-                            <li> بكالوريوس في القانون بتقدير ممتاز مع مرتبة الشرف من كليات بريدة.</li>
-                             <li> حاصل على BDI للحوكمة البرطانية للعمل كأمين مجلس إدارة</li>
-                            
+                            <li>بكالوريوس في القانون بتقدير ممتاز مع مرتبة الشرف من كليات بريدة.</li>
+                            <li>حاصل على BDI للحوكمة البرطانية للعمل كأمين مجلس إدارة</li>
                         </ul>
                     </div>
-
                     <div class="bio-block">
                         <h4 class="bio-title">أبرز الخبرات:</h4>
                         <ul class="bio-list">
-                            <li>عمل في المجال القانوني والحوكمة والالتزام منذ عام 2020م وحتى تاريخه،.</li>
-                             <li> محاضرًا متعاونًا في عدد من الجامعات الحكومية والأهلية لتدريس القانون.</li>
-                            
+                            <li>عمل في المجال القانوني والحوكمة والالتزام منذ عام 2020م وحتى تاريخه.</li>
+                            <li>محاضرًا متعاونًا في عدد من الجامعات الحكومية والأهلية لتدريس القانون.</li>
                         </ul>
                     </div>
-
                     <div class="bio-block">
                         <h4 class="bio-title">مجالات الخبرة:</h4>
                         <p class="team-desc">القانون التجاري، الشركات، العقود، الحوكمة، الالتزام والامتثال، القانون المصرفي، المنازعات التجارية، والاستشارات القانونية والتنظيمية.</p>
@@ -737,53 +839,46 @@
                 </div>
             </div>
 
-            <!-- الشخص الثاني: د. عبد الملك البازعي -->
             <div class="team-card">
                 <div class="team-img-box dr-abdulmalik-img" onclick="openModal('1dr-abdulmalik.jpg')">
                     <img src="1dr-abdulmalik.jpg" alt="د. عبد الملك البازعي">
                 </div>
                 <div class="team-info">
                     <h3>د. عبد الملك بن عبد الله البازعي</h3>
-                    <span class="team-role">مستشار شرعي وقانوني </span>
-                    
+                    <span class="team-role">مستشار شرعي وقانوني</span>
                     <div class="bio-block">
                         <h4 class="bio-title">الملخص التعريفي:</h4>
-                        <p class="team-desc">مستشار شرعي و قانوني وباحث متخصص يدمج بين التأصيل الشرعي والتحليل النظامي والتطبيق المؤسسي، مع تركيز احترافي على الحوكمة وإدارة المخاطر والامتثال في القطاعات المالية، التأمينية وخبرة في إعداد البحوث والدراسات المتخصصة.</p>
+                        <p class="team-desc">مستشار شرعي وقانوني وباحث متخصص يدمج بين التأصيل الشرعي والتحليل النظامي والتطبيق المؤسسي، مع تركيز احترافي على الحوكمة وإدارة المخاطر والامتثال في القطاعات المالية، التأمينية وخبرة في إعداد البحوث والدراسات المتخصصة.</p>
                     </div>
-
                     <div class="bio-block">
                         <h4 class="bio-title">المؤهلات العلمية:</h4>
                         <ul class="bio-list">
-                            <li> الدكتوراه في أصول الفقه من جامعة القصيم عام 2022م</li>
-                            <li> الماجستير في أصول الفقه من جامعة الإمام محمد بن سعود الإسلامية 2017م.</li>
+                            <li>الدكتوراه في أصول الفقه من جامعة القصيم عام 2022م</li>
+                            <li>الماجستير في أصول الفقه من جامعة الإمام محمد بن سعود الإسلامية 2017م.</li>
                             <li>الدبلوم العالي في المحاماة 2017م</li>
-                            <li> البكالوريوس في الشريعة من جامعة القصيم 2009م</li>
+                            <li>البكالوريوس في الشريعة من جامعة القصيم 2009م</li>
                         </ul>
                     </div>
-
                     <div class="bio-block">
                         <h4 class="bio-title">أبرز الخبرات:</h4>
                         <ul class="bio-list">
                             <li>مستشار شرعي وقانوني في شركة "دار المراجعة الشرعية" (المرخصة من البنك المركزي البحريني).</li>
                             <li>مستشار اللجنة الشرعية في شركة "اتحاد الخليج للتأمين التعاوني".</li>
-                            <li>مستشار اللجنة الشرعية في شركة " المتكاملة للتأمين التعاوني".</li>
+                            <li>مستشار اللجنة الشرعية في شركة "المتكاملة للتأمين التعاوني".</li>
                             <li>مستشار متعاون مع "شركة تطوير التعليم القابضة"</li>
-                             <li>محاضر سابق في قسم الحقوق بكليات بريدة.</li>
+                            <li>محاضر سابق في قسم الحقوق بكليات بريدة.</li>
                             <li>محاضر ومدرب قانوني في الأمن العام.</li>
                         </ul>
                     </div>
-
                     <div class="bio-block">
                         <h4 class="bio-title">الإنتاج العلمي:</h4>
                         <p class="team-desc">عدد من البحوث العلمية المحكمة في الشريعة والقانون والمنازعات المصرفية والتمويلية.</p>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- نافذة عرض الصورة المكبرة (Lightbox Modal) -->
     <div id="imageModal" class="image-modal" onclick="closeModalOnBg(event)">
         <div class="modal-content-wrapper">
             <span class="modal-close-btn" onclick="closeModal()">&times;</span>
@@ -793,7 +888,7 @@
 
     <section id="consult" class="section-container">
         <div class="consultation-form-wrapper">
-            <h3>طلب استشارة قانونية </h3>
+            <h3>طلب استشارة قانونية</h3>
             <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
                 <div class="form-grid">
                     <div class="form-input-group form-full">
@@ -817,7 +912,7 @@
                         <textarea id="c-message" rows="5" required placeholder="اكتب نبذة مختصرة عن موضوع الاستشارة..."></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn-copper" style="width: 100%; margin-top: 30px;">إرسال طلب الاستشارة</button>
+                <button type="submit" class="btn-copper" style="width: 100%; margin-top: 25px;">إرسال طلب الاستشارة</button>
             </form>
         </div>
     </section>
@@ -833,7 +928,7 @@
                 <p><i class="fa-solid fa-envelope"></i> albazie.law@gmail.com</p>
                 <p><i class="fa-solid fa-phone"></i> 0504888115 | 0546779090</p>
             </div>
-           <div class="footer-col footer-legal-col">
+            <div class="footer-col footer-legal-col">
                 <span>سجل منشأة قانونية رقم: 7000015073</span>
                 <span>ترخيص رقم: 471637</span>
             </div>
@@ -842,23 +937,21 @@
     </footer>
 
     <script>
-        // دوال التحكم بالصورة المنبثقة (Lightbox)
         function openModal(imageSrc) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
             modalImg.src = imageSrc;
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // إيقاف التمرير بالخلفية
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             const modal = document.getElementById('imageModal');
             modal.classList.remove('active');
-            document.body.style.overflow = 'auto'; // إعادة تفعيل التمرير
+            document.body.style.overflow = 'auto';
         }
 
         function closeModalOnBg(event) {
-            // إغلاق النافذة إذا تم النقر على الخلفية السوداء خارج الصورة
             if (event.target.id === 'imageModal') {
                 closeModal();
             }
@@ -870,7 +963,6 @@
             const service = document.getElementById('c-service').value;
             const message = document.getElementById('c-message').value;
 
-            // رقم الهاتف المخصص لاستقبال الاستشارات (يمكنك تغييره عند الرغبة)
             const phoneNumber = "966504888115";
 
             const text = `السلام عليكم، أرغب في طلب استشارة قانونية.%0a%0a` +
