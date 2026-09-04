@@ -869,9 +869,17 @@
             const name = document.getElementById('c-name').value;
             const service = document.getElementById('c-service').value;
             const message = document.getElementById('c-message').value;
-            const text = `السلام عليكم، أرغب في طلب استشارة قانونية:\n\n👤 *الاسم:* ${name}\n⚖️ *مجال الاستشارة:* ${service}\n📝 *التفاصيل:* ${message}`;
-            const encodedText = encodeURIComponent(text);
-            window.open(`https://wa.me/966504888115?text=${encodedText}`, '_blank');
+
+            // رقم الهاتف المخصص لاستقبال الاستشارات (يمكنك تغييره عند الرغبة)
+            const phoneNumber = "966504888115";
+
+            const text = `السلام عليكم، أرغب في طلب استشارة قانونية.%0a%0a` +
+                         `*الاسم الكريم:* ${encodeURIComponent(name)}%0a` +
+                         `*مجال الاستشارة:* ${encodeURIComponent(service)}%0a` +
+                         `*التفاصيل:* ${encodeURIComponent(message)}`;
+
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
+            window.open(whatsappURL, '_blank');
         }
     </script>
 </body>
