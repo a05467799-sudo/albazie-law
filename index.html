@@ -18,7 +18,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <meta property="og:image" content="https://albazie-law.com/BZ.png">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -64,6 +64,13 @@
             display: flex;
             gap: 20px;
             align-items: center;
+        }
+
+        /* نفس مسافة أرقام الجوال والإيميل */
+        .top-bar > div:last-child {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .top-bar span {
@@ -248,6 +255,26 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+        }
+
+        /* صورة الخدمات القانونية - مدمجة مع لون خلفية الموقع */
+        .services-image-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-cream);
+            text-align: center;
+        }
+
+        .services-image {
+            display: block;
+            width: 100%;
+            max-width: 1024px;
+            height: auto;
+            margin: 0 auto;
+            background-color: var(--bg-cream);
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
         }
 
         .service-category-card {
@@ -632,17 +659,20 @@
                 font-size: 0.75rem;
                 padding: 10px;
             }
+
             .top-bar .contact-group {
                 justify-content: center;
                 flex-wrap: wrap;
                 gap: 10px;
             }
+
             .top-bar > div:last-child {
                 display: flex;
                 flex-direction: column;
                 gap: 4px;
                 align-items: center;
             }
+
             .top-bar span {
                 margin: 0 !important;
             }
@@ -684,6 +714,16 @@
 
             .team-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .services-image-wrapper {
+                width: 100%;
+            }
+
+            .services-image {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
             }
 
             .form-grid {
@@ -751,30 +791,8 @@
             <h2>الخدمات القانونية</h2>
             <p>نقدم حزمة متكاملة من الخدمات القانونية والشرعية المتخصصة للأفراد والشركات</p>
         </div>
-        <div class="services-grid-wrapper">
-            <div class="service-category-card">
-                <div class="service-category-title"></div>
-                <div class="service-items-list">
-                    <div class="service-item-row"><span class="emoji">⚖️</span> الترافع أمام جميع المحاكم</div>
-                    <div class="service-item-row"><span class="emoji">🔨</span> التحكيم</div>
-                    <div class="service-item-row"><span class="emoji">🤝</span> القضايا التجارية والمنازعات التجارية</div>
-                    <div class="service-item-row"><span class="emoji">📊</span> المنازعات المصرفية والتمويلية والتأمينية</div>
-                    <div class="service-item-row"><span class="emoji">📋</span> الأنظمة واللوائح والجهات الحكومية</div>
-                    <div class="service-item-row"><span class="emoji">👥</span> المنازعات العمالية</div>
-                </div>
-            </div>
-
-            <div class="service-category-card">
-                <div class="service-category-title"></div>
-                <div class="service-items-list">
-                    <div class="service-item-row"><span class="emoji">📝</span> صياغة ومراجعة العقود والاتفاقيات</div>
-                    <div class="service-item-row"><span class="emoji">✅</span> حوكَمة الشركات والامتثال</div>
-                    <div class="service-item-row"><span class="emoji">💰</span> المنازعات التجارية والمالية</div>
-                    <div class="service-item-row"><span class="emoji">⚖️</span> تحصيل الديون والتنفيذ</div>
-                    <div class="service-item-row"><span class="emoji">👥</span> الأحوال الشخصية والميراث</div>
-                    <div class="service-item-row"><span class="emoji">📖</span> الاستشارات القانونية</div>
-                </div>
-            </div>
+        <div class="services-image-wrapper">
+            <img src="Services.png" alt="الخدمات القانونية" class="services-image">
         </div>
     </section>
 
