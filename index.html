@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 <head>
     <!-- Google tag (gtag.js) -->
@@ -76,7 +75,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         align-items: center;
     }
 
-    /* نفس مسافة أرقام الجوال والإيميل */
     .top-bar > div:last-child {
         display: flex;
         align-items: center;
@@ -99,14 +97,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     .top-bar a:hover {
         color: #d1ab7a;
-    }
-
-    .top-bar .license-tag {
-        color: #eedcd0;
-        background: rgba(140, 98, 57, 0.2);
-        padding: 2px 10px;
-        border-radius: 4px;
-        border: 1px solid rgba(140, 98, 57, 0.4);
     }
 
     header {
@@ -259,15 +249,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         padding: 80px 20px;
     }
 
-    .services-grid-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-    }
-
-    /* صورة الخدمات القانونية - مدمجة مع لون خلفية الموقع */
     .services-image-wrapper {
         max-width: 1200px;
         margin: 0 auto;
@@ -285,59 +266,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         border: none;
         box-shadow: none;
         border-radius: 0;
-    }
-
-    .service-category-card {
-        background-color: #ffffff;
-        border-radius: 8px;
-        border: 1px solid rgba(140, 98, 57, 0.2);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .service-category-title {
-        background-color: var(--primary-dark);
-        color: var(--copper-color);
-        font-family: var(--font-amiri);
-        font-size: 1.4rem;
-        text-align: center;
-        padding: 16px;
-        border-bottom: 3px solid var(--copper-color);
-    }
-
-    .service-items-list {
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .service-item-row {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        background-color: var(--bg-cream);
-        padding: 12px 15px;
-        border-radius: 6px;
-        font-weight: 600;
-        color: var(--text-dark);
-        font-size: 1rem;
-        border: 1px solid rgba(0,0,0,0.04);
-        transition: all 0.3s ease;
-    }
-
-    .service-item-row:hover {
-        transform: translateX(-5px);
-        border-color: var(--copper-color);
-        background-color: #ffffff;
-    }
-
-    .service-item-row span.emoji {
-        font-size: 1.2rem;
-        min-width: 25px;
-        text-align: center;
     }
 
     .method-grid {
@@ -660,7 +588,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         margin-top: 25px; 
     }
 
-    /* تعديلات متجاوبة لشاشات الهواتف المحمولة لحل مشكلة التداخل في الأعلى */
     @media (max-width: 768px) {
         .top-bar {
             flex-direction: column;
@@ -749,7 +676,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
     }
 </style>
-
 </head>
 <body>
 
@@ -766,9 +692,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div>
         <span>سجل منشأة قانونية رقم: 7000015073</span>
-        
         <span>ترخيص رقم: 471637</span>
-        
         <span>المملكة العربية السعودية</span>
     </div>
 </div>
@@ -986,6 +910,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (event.target.id === 'imageModal') {
             closeModal();
         }
+    }
+
+    // دالة إرسال تفاصيل الاستشارة إلى الواتساب الرقم المحدد
+    function sendToWhatsApp(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('c-name').value;
+        const service = document.getElementById('c-service').value;
+        const message = document.getElementById('c-message').value;
+
+        const phoneNumber = "966546779090";
+
+        const text = `السلام عليكم، أرغب في طلب استشارة قانونية:\n\n` +
+                     `*الاسم:* ${name}\n` +
+                     `*مجال الاستشارة:* ${service}\n` +
+                     `*التفاصيل:* ${message}`;
+
+        const encodedText = encodeURIComponent(text);
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+
+        window.open(whatsappURL, '_blank');
     }
 </script>
 
