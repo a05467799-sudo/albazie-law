@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-XXXXXXXXX');
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -975,23 +985,6 @@
             if (event.target.id === 'imageModal') {
                 closeModal();
             }
-        }
-
-        function sendToWhatsApp(event) {
-            event.preventDefault();
-            const name = document.getElementById('c-name').value;
-            const service = document.getElementById('c-service').value;
-            const message = document.getElementById('c-message').value;
-
-            const phoneNumber = "966504888115";
-
-            const text = `السلام عليكم، أرغب في طلب استشارة قانونية.%0a%0a` +
-                         `*الاسم الكريم:* ${encodeURIComponent(name)}%0a` +
-                         `*مجال الاستشارة:* ${encodeURIComponent(service)}%0a` +
-                         `*التفاصيل:* ${encodeURIComponent(message)}`;
-
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
-            window.open(whatsappURL, '_blank');
         }
     </script>
 </body>
